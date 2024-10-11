@@ -1,0 +1,48 @@
+{
+"inbounds": [
+    {
+      "port": 1080,
+      "protocol": "socks",
+      "settings": {
+        "auth": "noauth",
+        "udp": true
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "<YOUR_VLESS_IP>",
+            "port": 8443,
+            "users": [
+              {
+                "id": "<YOUR_VLESS_ID>",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "realitySettings": {
+          "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc",
+          "shortId": "",
+          "serverName": "cdn.discordapp.com",
+          "fingerprint": "chrome"
+        },
+        "tcpSettings": {
+          "header": {
+            "type": "none"
+          }
+        }
+      },
+      "tag": "outbound-vless"
+    }
+  ]
+}
