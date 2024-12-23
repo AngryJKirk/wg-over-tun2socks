@@ -19,6 +19,7 @@ services:
         - net.ipv4.conf.all.src_valid_mark=1
       devices:
         - /dev/net/tun
+      restart: unless-stopped  
       networks:
         - t2s-wg
       depends_on:
