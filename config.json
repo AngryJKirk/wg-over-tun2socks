@@ -16,12 +16,12 @@
         "vnext": [
           {
             "address": "<YOUR_VLESS_IP>",
-            "port": 8443,
+            "port": <YOUR_VLESS_PORT>,
             "users": [
               {
                 "id": "<YOUR_VLESS_ID>",
                 "encryption": "none",
-                "flow": ""
+                "flow": "<YOUR_VLESS_FLOW>"
               }
             ]
           }
@@ -31,9 +31,9 @@
         "network": "tcp",
         "security": "reality",
         "realitySettings": {
-          "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc",
-          "shortId": "",
-          "serverName": "cdn.discordapp.com",
+          "publicKey": "<YOUR_VLESS_PUBLIC_KEY (not the private key!)>",
+          "shortId": "<YOUR_VLESS_SHORT_ID>",
+          "serverName": "<YOUR_VLESS_SNI_FROM_serverNames>",
           "fingerprint": "chrome"
         },
         "tcpSettings": {
