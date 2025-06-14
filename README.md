@@ -12,11 +12,9 @@ I wanted it too and spend some time figuring out how.
 
 ### Setup
 
-1) in `config.json` enter the IP-address of the server B in the placeholder (domain name will not work)
-2) in `config.json` enter ID of your VLESS connection (it's the credentials that let you be authenticated in VLESS)
-3) make sure every other field coressponds to your VLESS configuration. Mine is default for Marzban. You basically can provide any valid xray config, it's up to you.
-4) in `docker-compose.yml` populate env variables with your Wireguard address (server A's public IP) and your VLESS IP-address (server B's public IP)
-5) you can also use other env variables, everything that's compatible with [wg-easy](https://github.com/wg-easy/wg-easy/)
+1) In `config.json` use the outbound corresponding to your server config (for xray reality it's public key, xray server address, sni, UUID, flow. Everything you may see in the connection string.)
+2) in `docker-compose.yml` populate env variables with your Wireguard address (server A's public IP) and your VLESS IP-address (server B's public IP)
+3) you can also use other env variables, everything that's compatible with [wg-easy](https://github.com/wg-easy/wg-easy/)
 
 > [!NOTE] 
 > Everything is configured in the way that your default interface is assumed as `eth0`. If it's not then change the source code of `start.sh` by replacing `eth0` with your interface. You can see your interfaces by calling `ip a`. Find there the inteface that actually serves internet connection, usually it has your NAT IP address and the gateway IP.
